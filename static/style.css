@@ -1,0 +1,280 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    top:-200px;
+    left:-200px;
+    animation:float 8s ease-in-out infinite;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.05);
+    bottom:-150px;
+    right:-150px;
+    animation:floatReverse 10s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(40px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes floatReverse{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-40px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* Main Card */
+.container{
+    width:850px;
+    max-width:95%;
+    padding:35px;
+    background:rgba(255,255,255,0.15);
+   
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.25);
+    animation:fadeUp 0.8s ease;
+    color:white;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+h2{
+    margin-top:20px;
+    margin-bottom:15px;
+}
+
+h3{
+    margin-bottom:10px;
+}
+
+p{
+    line-height:1.6;
+}
+
+hr{
+    border:none;
+    height:1px;
+    background:rgba(255,255,255,0.2);
+    margin:20px 0;
+}
+
+/* Form */
+form{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+input{
+    flex:1;
+    padding:14px 18px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+    background:white;
+    color:#333;
+    transition:0.3s;
+}
+
+input:focus{
+    transform:scale(1.02);
+    box-shadow:0 0 15px rgba(255,255,255,0.4);
+}
+
+/* Buttons */
+button{
+    padding:14px 25px;
+    border:none;
+    border-radius:12px;
+    background:#00e676;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.2);
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+/* Links */
+a{
+    text-decoration:none;
+    color:#ffd54f;
+    font-weight:600;
+    transition:0.3s;
+}
+
+a:hover{
+    color:white;
+}
+
+/* Logs */
+.logs{
+    height:300px;
+    overflow-y:auto;
+    padding:15px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+.logs p{
+    margin-bottom:10px;
+    padding:10px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.08);
+}
+
+/* Domain List */
+ul{
+    list-style:none;
+}
+
+li{
+    margin-bottom:12px;
+    padding:12px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.1);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:0.3s;
+}
+
+li:hover{
+    transform:translateX(5px);
+    background:rgba(255,255,255,0.18);
+}
+
+/* Status Cards */
+.status-card{
+    margin-top:15px;
+    padding:15px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.1);
+}
+
+/* Access Denied Styling */
+.denied{
+    text-align:center;
+}
+
+.denied h1{
+    font-size:4rem;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* Response Preview */
+pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:15px;
+    max-height:350px;
+    overflow:auto;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .container{
+        padding:20px;
+    }
+
+    form{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+}

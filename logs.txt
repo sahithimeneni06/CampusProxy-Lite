@@ -1,0 +1,6 @@
+2026-06-14 11:10:24 | instagram.com | BLOCKED
+2026-06-14 11:12:33 | instagram.com | BLOCKED
+2026-06-14 11:15:55 | instagram.com | BLOCKED
+2026-06-14 11:16:24 | linkedin.com | ALLOWED
+2026-06-14 11:20:21 | linkedin.com | ALLOWED
+2026-06-14 11:20:35 | instagram.com | BLOCKED

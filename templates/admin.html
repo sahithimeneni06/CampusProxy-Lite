@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}"
+>
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="container">
+
+<h1>
+Campus Proxy Admin
+</h1>
+
+<hr>
+
+<h2>
+Add Blocked Domain
+</h2>
+
+<form
+action="/add-domain"
+method="POST"
+>
+
+<input
+type="text"
+name="domain"
+placeholder="instagram.com"
+required
+>
+
+<button>
+Add
+</button>
+
+</form>
+
+<hr>
+
+<h2>
+Blocked Domains
+</h2>
+
+<ul>
+
+{% for domain in domains %}
+
+<li>
+
+{{ domain }}
+
+<a href="/remove-domain/{{ domain }}">
+
+Remove
+
+</a>
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h2>
+Recent Logs
+</h2>
+
+<div class="logs">
+
+{% for log in logs[:20] %}
+
+<p>
+
+{{ log }}
+
+</p>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>
